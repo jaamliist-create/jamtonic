@@ -1,0 +1,26 @@
+import type { MetadataRoute } from 'next'
+import { SUBTITLE } from '@/lib/domain/copy'
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'JamTonic',
+    short_name: 'JamTonic',
+    description: SUBTITLE,
+    lang: 'fr-CA',
+    start_url: '/',
+    scope: '/',
+    display: 'standalone',
+    orientation: 'portrait',
+    background_color: '#042735',
+    theme_color: '#063B50',
+    icons: [
+      { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { src: '/icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+    ],
+    shortcuts: [
+      { name: 'Vote pour tes préférées', url: '/vote' },
+      { name: 'Espace du band', url: '/espace' },
+    ],
+  }
+}
